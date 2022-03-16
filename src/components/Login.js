@@ -2,6 +2,7 @@ import React from "react";
 import '../css/dashboard.css';
 import { useState } from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 export default function Login(){
     const [email,setEmail] = useState('');
@@ -47,7 +48,7 @@ export default function Login(){
                 <div className="row justify-content-center">
                     <div className="col-md-7 mt-5">
                         <div className="card">
-                            <div className="card-header bg-dark text-white">Đăng nhập</div>
+                            <div className="card-header bg-dark text-white">Đăng nhập <Link to="/" style={{marginLeft: '440px', textDecoration: 'none'}}>Trang chủ</Link></div>
                             <div className="card-body mt-3 mb-3">
                                 <form onSubmit={handleSubmit}>
                                     <div className="form-group row">
