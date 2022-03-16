@@ -1,0 +1,160 @@
+.bg-login{
+    background-image: url('https://i.ytimg.com/vi/aMU0h4mS34s/maxresdefault.jpg');
+    background-size: cover;
+    height: 680px;
+}
+.admin-main{
+    display: flex;
+    position: relative;
+}
+.admin-main .col-left{
+    width: 16%;
+    min-height: 680px;
+}
+.admin-main .col-left .card-header{
+    border-bottom: 1px solid white;
+}
+.admin-main .col-left a{
+    color: white;
+}
+.admin-main .col-left .dropdown-menu a{
+    color: black;
+}
+.admin-main .col-left a:hover{
+    color: green;
+    transition: 0.5s;
+}
+.admin-main .quantity-user{
+    text-align: center;
+    height: 80px;
+    font-size: 20px;
+    margin-top: 30px;
+    padding-top: 10px;
+    margin-left: 100px;
+    width: 200px;
+}
+.admin-main .all-user{
+    position: absolute;
+    top: 0;
+    left: 250px;
+    width: max-content;
+}
+.admin-main .container{
+    padding-left: 0;
+    padding-right: 0;
+}
+.admin-main .justify-content-center{
+    width: 100%;
+}
+.admin-main .container .table-user{
+    margin-top: 140px;
+}
+.update-user{
+    margin-left: 228px;
+}
+.logo-dashboard{
+    width: 90px;
+    margin-left: -50px;
+}
+.admin-main .quantity-cate{
+    text-align: center;
+    height: 70px;
+    font-size: 15px;
+    margin-top: 30px;
+    padding-top: 10px;
+    margin-right: 50px;
+    width: 130px;
+}
+.admin-main .all-cate{
+    position: absolute;
+    top: 0;
+    left: 400px;
+    width: max-content;
+}
+.admin-main .quantity-post{
+    text-align: center;
+    height: 70px;
+    font-size: 15px;
+    margin-top: 30px;
+    padding-top: 10px;
+    margin-right: 50px;
+    width: 130px;
+}
+
+.admin-main .container .my-table-cate{
+    margin-top: 140px;
+}
+.admin-main .container .my-card-header{
+    text-align: center;
+}
+.admin-main .all-post{
+    position: absolute;
+    top: -20px;
+    left: 400px;
+    width: max-content;
+}
+.admin-main .all-post2{
+    position: absolute;
+    top: 65px;
+    left: 400px;
+    width: max-content;
+}
+.admin-main .container .my-table-post{
+    margin-top: 200px;
+}
+.btn-add-post{
+    margin-left: 300px;
+}
+.btn-login{
+    margin-left: 160px;
+}
+.btn-edit-post{
+    margin-left: 360px;
+}
+.resize-txt{
+    resize: none;
+}
+.size-btn-edit{
+    font-size: 18px
+}
+.size-text-table{
+    font-size: 15px;
+}
+
+.ck.ck-editor__main>.ck-editor__editable{
+    height: 300px;
+}
+
+table img{
+    width: 100px;
+    height: 75px;
+}
+table a{
+    color: black;
+}
+table a:hover{
+    text-decoration: none;
+}
+
+.status-waiting{
+    background-color: rgb(252, 252, 143);
+}
+.status-success{
+    background-color: #67b878;
+}
+.status-fail{
+    background-color: #e76e7a;
+}
+.search-form{
+    position: relative;
+    margin: auto;
+    margin-top: 5px;
+}
+.search-form .form-control::placeholder{
+    color: rgb(167, 166, 166);
+}
+.search-form .fa-search{
+    position: absolute;
+    right: 0;
+    top: 10px;
+} 
