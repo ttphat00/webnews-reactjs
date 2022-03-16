@@ -22,6 +22,9 @@ function TopHeader() {
                         <Link to={`/search/${keyWord}/1`}><button><i className="fa fa-search"></i></button></Link>
                     </form>
                 </div>
+                <div className="mt-4">
+                    <Link to="/login" style={{textDecoration: 'none'}}>Đăng nhập</Link>
+                </div>
             </div>
         </div>
     );
