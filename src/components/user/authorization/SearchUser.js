@@ -32,11 +32,11 @@ export default function SearchUser(){
         <div>
             <div className="admin-main">
                 <div className="col-left bg-dark text-white">
-                    <div className="card-header bg-dark"><Link className="nav-link" to="/authorization">DASHBOARD</Link></div>
+                    <div className="card-header bg-dark"><Link className="nav-link" to="/system-admin">DASHBOARD</Link></div>
                     <div className="card-body">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <Link className="nav-link" to={`/authorization/1`}>Quản Lý Người Dùng</Link>
+                                <Link className="nav-link" to={`/system-admin/1`}>Quản Lý Người Dùng</Link>
                             </li>
                         </ul>
                     </div>
@@ -48,7 +48,7 @@ export default function SearchUser(){
                                 <div className="search-form w-50">
                                     <form>
                                         <input type="search" name="search" className="form-control" placeholder="Tìm kiếm" onChange={handleChangeWord}/>
-                                        <Link to={`/authorization-search-user/${keyWord}/1`}><i className="fa fa-search"></i></Link>
+                                        <Link to={`/sysad-search-user/${keyWord}/1`}><i className="fa fa-search"></i></Link>
                                     </form>
                                 </div>
                                 <div className="card-body">
@@ -99,17 +99,17 @@ export default function SearchUser(){
                                     </table>
                                     <nav aria-label="Page navigation example">
                                         <ul className="pagination">
-                                            <li className="page-item"><Link className="page-link" to={'/authorization-search-user/'+title+'/'+(idpage > 1 ? (parseInt(idpage) - 1) : 1)}>&laquo;</Link></li>
+                                            <li className="page-item"><Link className="page-link" to={'/sysad-search-user/'+title+'/'+(idpage > 1 ? (parseInt(idpage) - 1) : 1)}>&laquo;</Link></li>
                                             {
                                                 sumUser.map((data, index) => {
                                                     if( index < (sumUser.length/5) ){
                                                         return(
-                                                            <li key={index} className="page-item"><Link className="page-link" to={'/authorization-search-user/'+title+'/'+(index + 1)}>{index + 1}</Link></li>
+                                                            <li key={index} className="page-item"><Link className="page-link" to={'/sysad-search-user/'+title+'/'+(index + 1)}>{index + 1}</Link></li>
                                                         );
                                                     }else return null;
                                                 })
                                             }
-                                            <li className="page-item"><Link className="page-link" to={'/authorization-search-user/'+title+'/'+(idpage < (sumUser.length/5) ? (parseInt(idpage) + 1) : idpage)}>&raquo;</Link></li>
+                                            <li className="page-item"><Link className="page-link" to={'/sysad-search-user/'+title+'/'+(idpage < (sumUser.length/5) ? (parseInt(idpage) + 1) : idpage)}>&raquo;</Link></li>
                                         </ul>
                                     </nav>
                                 </div>

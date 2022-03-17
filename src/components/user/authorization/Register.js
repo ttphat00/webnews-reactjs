@@ -41,11 +41,11 @@ export default function Register(){
         <div>
             <div className="admin-main">
                 <div className="col-left bg-dark text-white">
-                    <div className="card-header bg-dark"><Link className="nav-link" to="/authorization">DASHBOARD</Link></div>
+                    <div className="card-header bg-dark"><Link className="nav-link" to="/system-admin">DASHBOARD</Link></div>
                     <div className="card-body">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <Link className="nav-link" to="/authorization/1">Quản Lý Người Dùng</Link>
+                                <Link className="nav-link" to="/system-admin/1">Quản Lý Người Dùng</Link>
                                 <Link className="nav-link" to="/register">Tạo Tài Khoản</Link>
                             </li>
                         </ul>

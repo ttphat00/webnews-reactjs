@@ -34,7 +34,7 @@ export default function ShowPermission(){
                     <div className="search-form w-50">
                         <form>
                             <input type="search" name="search" className="form-control" placeholder="Tìm kiếm người dùng" onChange={handleChangeWord}/>
-                            <Link to={`/authorization-search-user/${keyWord}/1`}><i className="fa fa-search"></i></Link>
+                            <Link to={`/sysad-search-user/${keyWord}/1`}><i className="fa fa-search"></i></Link>
                         </form>
                     </div>
                     <div className="card-body">
@@ -76,17 +76,17 @@ export default function ShowPermission(){
                         </table>
                         <nav aria-label="Page navigation example">
                             <ul className="pagination">
-                                <li className="page-item"><Link className="page-link" to={'/authorization/'+(id > 1 ? (parseInt(id) - 1) : 1)}>&laquo;</Link></li>
+                                <li className="page-item"><Link className="page-link" to={'/system-admin/'+(id > 1 ? (parseInt(id) - 1) : 1)}>&laquo;</Link></li>
                                 {
                                     users.map((data, index) => {
                                         if( index < (users.length/5) ){
                                             return(
-                                                <li key={index} className="page-item"><Link className="page-link" to={'/authorization/'+(index + 1)}>{index + 1}</Link></li>
+                                                <li key={index} className="page-item"><Link className="page-link" to={'/system-admin/'+(index + 1)}>{index + 1}</Link></li>
                                             );
                                         }else return null;
                                     })
                                 }
-                                <li className="page-item"><Link className="page-link" to={'/authorization/'+(id < (users.length/5) ? (parseInt(id) + 1) : id)}>&raquo;</Link></li>
+                                <li className="page-item"><Link className="page-link" to={'/system-admin/'+(id < (users.length/5) ? (parseInt(id) + 1) : id)}>&raquo;</Link></li>
                             </ul>
                         </nav>
                     </div>

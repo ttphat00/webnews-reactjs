@@ -13,7 +13,7 @@ export default function Authorization(){
     const approvers = [];
 
     useEffect(() => {
-        document.title = 'Authorization';
+        document.title = 'System Admin';
 
         axios.get('https://webnews-backend.herokuapp.com/api/users')
         .then(res => {
@@ -27,7 +27,7 @@ export default function Authorization(){
             <div>
                 <div className="admin-main">
                     <div className="col-left bg-dark text-white">
-                        <div className="card-header bg-dark"><Link className="nav-link" to="/authorization">DASHBOARD</Link></div>
+                        <div className="card-header bg-dark"><Link className="nav-link" to="/system-admin">DASHBOARD</Link></div>
                         <div className="card-body">
                             <ul className="navbar-nav">
                                 <li className="nav-item active">

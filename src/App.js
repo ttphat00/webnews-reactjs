@@ -33,9 +33,9 @@ function App() {
         <Route path="/logout/:permission" component={Logout} />
         <Route path="/admin" component={Admin} />
         <Route path="/post-detail/:id" component={PostDetail} />
-        <Route path="/authorization" component={Authorization} />
+        <Route path="/system-admin" component={Authorization} />
         <Route path="/edit-permission/:idpage/:id" component={EditPermission} />
-        <Route path="/authorization-search-user/:title/:idpage" component={SearchUser} />
+        <Route path="/sysad-search-user/:title/:idpage" component={SearchUser} />
         <Route component={Error} />
       </Switch>
     </>
