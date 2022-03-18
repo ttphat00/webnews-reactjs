@@ -53,6 +53,7 @@ export default function EditPermission(){
                             <li className="nav-item active">
                                 <Link className="nav-link" to="/system-admin/1">Quản Lý Người Dùng</Link>
                                 <Link className="nav-link" to="/register">Tạo Tài Khoản</Link>
+                                <Link className="nav-link" to="/">Về Trang Chủ</Link>
                             </li>
                         </ul>
                     </div>
