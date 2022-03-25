@@ -130,7 +130,17 @@ header .menu-navbar .container ul li .dropdown{
 header .menu-navbar .container ul li:hover .dropdown{
     visibility: visible;
     width: 170px;
-    transition: 0.5s;
+    animation: showMenu linear 0.2s;
+}
+@keyframes showMenu {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 header .menu-navbar .container ul li .dropdown .dropdown-list{
     display: block;
