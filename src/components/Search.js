@@ -37,7 +37,7 @@ function Search() {
                                 return null;
                             })
                         }
-                        <div className="cp-category-title"><b>Có {sumPost.length} kết quả cho từ khóa "{title.replace('+', ' ')}"</b></div>
+                        <div className="cp-category-title"><b>{sumPost.length ? `Có ${sumPost.length} kết quả cho từ khóa "${title.replace('+', ' ')}"` : 'Đang tìm kiếm...'}</b></div>
                         <div className="cp-subcategory-title"></div>
                     </div>
                     <div className="cp-post-list">

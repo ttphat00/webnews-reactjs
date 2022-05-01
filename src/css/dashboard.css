@@ -54,7 +54,7 @@
 }
 .logo-dashboard{
     width: 90px;
-    margin-left: -50px;
+    margin-left: -65px;
 }
 .admin-main .quantity-cate{
     text-align: center;
@@ -100,7 +100,7 @@
     width: max-content;
 }
 .admin-main .container .my-table-post{
-    margin-top: 200px;
+    margin-top: 25px;
 }
 .btn-add-post{
     margin-left: 300px;

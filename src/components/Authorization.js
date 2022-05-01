@@ -22,18 +22,19 @@ export default function Authorization(){
         .catch(error => console.log(error));
     },[]);
 
-    // if(localStorage.getItem('admin')){
+    if(localStorage.getItem('system_admin')){
         return (
             <div>
                 <div className="admin-main">
                     <div className="col-left bg-dark text-white">
-                        <div className="card-header bg-dark"><Link className="nav-link" to="/system-admin">DASHBOARD</Link></div>
+                        <div className="card-header bg-dark h4">DASHBOARD</div>
                         <div className="card-body">
                             <ul className="navbar-nav">
                                 <li className="nav-item active">
                                     <Link className="nav-link" to={`${match.url}/1`}>Quản Lý Người Dùng</Link>
                                     <Link className="nav-link" to={`/register`}>Tạo Tài Khoản</Link>
                                     <Link className="nav-link" to={`/`}>Về Trang Chủ</Link>
+                                    <Link className="nav-link" to='/logout/system-admin'>Đăng xuất</Link>
                                 </li>
                             </ul>
                         </div>
@@ -74,8 +75,8 @@ export default function Authorization(){
                 </div>
             </div>
         );
-    // }else{
-    //     window.location='/login'
-    //     return null;
-    // }
+    }else{
+        window.location='/login'
+        return null;
+    }
 }

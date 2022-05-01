@@ -29,12 +29,17 @@ export default function Login(){
                 if(response.data.result.permission === 'Tác giả'){
                     localStorage.setItem("token", JSON.stringify(res.data));
                     console.log(res.data);
-                    window.location='/author';
-                }else{
-                    localStorage.setItem("admin", JSON.stringify(res.data));
-                    console.log(res.data);
-                    window.location='/admin';
-                }
+                    window.location='/author/my-dashboard';
+                }else 
+                    if(response.data.result.permission === 'Kiểm duyệt'){
+                        localStorage.setItem("admin", JSON.stringify(res.data));
+                        console.log(res.data);
+                        window.location='/admin';
+                    }else{
+                        localStorage.setItem("system_admin", JSON.stringify(res.data));
+                        console.log(res.data);
+                        window.location='/system-admin/1';
+                    }
             })
             .catch(error => console.log(error));
             

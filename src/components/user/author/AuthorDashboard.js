@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useRouteMatch } from "react-router";
 import { Route, Switch } from 'react-router-dom';
@@ -10,54 +10,55 @@ import EditSubcategory from './subcategory/EditSubcategory';
 import CreatePost from './post/CreatePost';
 import EditPost from './post/EditPost';
 import EditSearchPost from './post/EditSearchPost';
-import axios from "axios";
+import AuthorInfo from "./AuthorInfo";
+// import axios from "axios";
 
 export default function AuthorDashboard(){
     var match = useRouteMatch();
-    const [category, setCategory] = useState([]);
-    const [subcategory, setSubcategory] = useState([]);
-    const [post, setPost] = useState([]);
-    const [user, setUser] = useState({result:{id:''}});
-    let myToken = JSON.parse(localStorage.getItem('token'));
-    const sum_cate = [];
-    const approving_cate = [];
-    const approved_cate = [];
-    const cancel_cate = [];
-    const posts = [];
-    const approving_post = [];
-    const approved_post = [];
-    const cancel_post = [];
+    // const [category, setCategory] = useState([]);
+    // const [subcategory, setSubcategory] = useState([]);
+    // const [post, setPost] = useState([]);
+    // const [user, setUser] = useState({result:{id:''}});
+    // let myToken = JSON.parse(localStorage.getItem('token'));
+    // const sum_cate = [];
+    // const approving_cate = [];
+    // const approved_cate = [];
+    // const cancel_cate = [];
+    // const posts = [];
+    // const approving_post = [];
+    // const approved_post = [];
+    // const cancel_post = [];
 
-    useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/category')
-        .then(res => {
-            setCategory(res.data);
-        })
-        .catch(error => console.log(error));
+    // useEffect(() => {
+    //     axios.get('https://webnews-backend.herokuapp.com/api/category')
+    //     .then(res => {
+    //         setCategory(res.data);
+    //     })
+    //     .catch(error => console.log(error));
 
-        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
-        .then(res => {
-            setSubcategory(res.data);
-        })
-        .catch(error => console.log(error))
+    //     axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+    //     .then(res => {
+    //         setSubcategory(res.data);
+    //     })
+    //     .catch(error => console.log(error))
 
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
-        .then(res => {
-            setPost(res.data);
-        })
-        .catch(error => console.log(error))
+    //     axios.get('https://webnews-backend.herokuapp.com/api/post')
+    //     .then(res => {
+    //         setPost(res.data);
+    //     })
+    //     .catch(error => console.log(error))
 
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
-        .then(res => {
-            setUser(res.data);
-        })
-        .catch(error => console.log(error));
-    }, [myToken.token])
+    //     axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+    //     .then(res => {
+    //         setUser(res.data);
+    //     })
+    //     .catch(error => console.log(error));
+    // }, [myToken.token])
 
     return (
         <div className="admin-main">
             <div className="col-left bg-dark text-white">
-                <div className="card-header bg-dark m-auto"><Link className="nav-link" to="/author">DASHBOARD</Link></div>
+                <div className="card-header bg-dark m-auto" style={{paddingLeft: '3rem'}}>DASHBOARD</div>
                 <div className="card-body">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item dropdown mb-3">
@@ -85,7 +86,7 @@ export default function AuthorDashboard(){
                 </div>
             </div>
 
-            {
+            {/* {
                 category.map((data) => {
                     if(data.id_user === user.result.id){
                         sum_cate.push(data);
@@ -174,10 +175,11 @@ export default function AuthorDashboard(){
                     <div>Bài viết bị hủy</div>
                     <div>{cancel_post.length}</div>
                 </div>
-            </div>
+            </div> */}
             
 
             <Switch>
+                <Route path={`${match.url}/my-dashboard`} component={AuthorInfo} />
                 <Route path={`${match.url}/add-category`} component={CreateCategory} />
                 <Route path={`${match.url}/add-subcategory`} component={CreateSubcategory} />
                 <Route path={`${match.url}/category/:id`} component={ShowCategory} />

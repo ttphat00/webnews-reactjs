@@ -8,7 +8,7 @@ export default function PostDetail(props){
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        document.querySelector('.sp-post-content').innerHTML = props.idPost.content;
+        document.querySelector('.sp-post-content').innerHTML = props.idPost.content || '...';
 
         axios.get(`https://webnews-backend.herokuapp.com/api/users/${props.idPost.id_user}`)
         .then(res => {
