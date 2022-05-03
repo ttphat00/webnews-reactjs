@@ -27,6 +27,10 @@ function ScrollUp() {
 
     useEffect(() => {
         window.addEventListener('scroll',scrollUpVisible);
+
+        return () => {
+            window.removeEventListener('scroll',scrollUpVisible);
+        }
     }, []);
 
     return (

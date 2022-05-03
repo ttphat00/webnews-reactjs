@@ -6,7 +6,6 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    background-color: rgb(252, 250, 250);
 }
 main img{
     width: 100%;
@@ -89,7 +88,7 @@ header .menu-navbar{
     z-index: 99;
 }
 header .menu-navbar .container{
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin: auto;
     box-sizing: border-box;
@@ -103,7 +102,7 @@ header .menu-navbar .container > ul{
 header .menu-navbar .container ul li{
     position: relative;
     display: block;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
     padding-top: 5px;
     box-sizing: border-box;
     z-index: 99;
@@ -114,17 +113,16 @@ header .menu-navbar .container ul li:hover{
 }
 header .menu-navbar .container ul li a{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
 }
 header .menu-navbar .container ul li .dropdown{
     position: absolute;
     left: 0;
     top: 34px;
-    background-color: white;
     width: max-content;
-    border: 1px solid rgb(241, 241, 241);
-    border-top: none;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     visibility: hidden;
 }
 header .menu-navbar .container ul li:hover .dropdown{
@@ -148,7 +146,7 @@ header .menu-navbar .container ul li .dropdown .dropdown-list{
 header .menu-navbar .container ul li .dropdown .dropdown-list li{
     padding-top: 5px;
     padding-bottom: 5px;
-    border-top: 1px solid rgb(224, 224, 224);
+    padding-left: 10px;
 }
 header .menu-navbar .container ul li .dropdown .dropdown-list li:hover{
     background-color: rgb(238, 0, 45);
@@ -157,7 +155,7 @@ header .menu-navbar .container ul li .dropdown .dropdown-list li:hover{
 }
 header .menu-navbar .container ul li .dropdown .dropdown-list li a{
     color: black;
-    font-size: 16px;
+    font-size: 15px;
 }
 header .menu-navbar .container ul li .dropdown .dropdown-list li:hover a{
     color: white;
@@ -217,7 +215,7 @@ footer .container .footer-col-right{
     padding-left: 100px;
 }
 footer .container .footer-col-right .f-y{
-    margin-top: 70px;
+    margin-top: 40px;
     font-size: 14px;
 }
 footer .container .footer-col-right .f-y p{

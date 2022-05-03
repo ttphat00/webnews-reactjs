@@ -56,17 +56,17 @@ export default function Authorization(){
                                 return null;
                             })
                         }
-                        <div className="bg-primary text-white quantity-user">
+                        <div className="bg-light quantity-user">
                             <div>Tổng số người dùng</div>
-                            <div>{user.length}</div>
+                            <div><b>{user.length}</b></div>
                         </div>
-                        <div className="bg-success text-white quantity-user">
+                        <div className="bg-light quantity-user">
                             <div>Tác Giả</div>
-                            <div>{authors.length}</div>
+                            <div><b>{authors.length}</b></div>
                         </div>
-                        <div className="bg-danger text-white quantity-user">
+                        <div className="bg-light quantity-user">
                             <div>Người Quản Trị</div>
-                            <div>{approvers.length}</div>
+                            <div><b>{approvers.length}</b></div>
                         </div>
                     </div>
                     <Switch>

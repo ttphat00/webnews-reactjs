@@ -16,7 +16,6 @@ function Footer() {
                                 <li>Địa chỉ: Ninh Kiều, Cần Thơ</li>
                                 <li>Email: <Link to='#'>ttphat@gmail.com</Link></li>
                                 <li>Điện thoại: <Link to="#">012 345 6789</Link></li>
-                                <li>Website: <Link to="#">http://localhost:3000/</Link></li>
                                 <li><Link to="#">Chính sách quyền riêng tư</Link></li>
                             </ul>
                         </div>

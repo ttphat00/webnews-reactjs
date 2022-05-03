@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 export default function SearchPost(props){
     let stt = 0;
     let sts = '';
+    let colortxt = '';
     const [post,setPost] = useState([]);
     const [subcategory,setSubcategory] = useState([]);
     const [user, setUser] = useState({});
@@ -79,7 +80,7 @@ export default function SearchPost(props){
                     return null;
                 })
             }
-            <div className="cp-category-title"><b>Có {sumPost.length} kết quả cho từ khóa "{title.replace('+', ' ')}"</b></div>
+            <div className="cp-category-title"><b>{sumPost.length ? `Có ${sumPost.length} kết quả cho từ khóa "${title.replace('+', ' ')}"` : 'Đang tìm kiếm...'}</b></div>
             <table className="table size-text-table">
                 <thead className="bg-primary text-white">
                     <tr>
@@ -89,6 +90,7 @@ export default function SearchPost(props){
                         <th scope="col">Mô tả ngắn</th>
                         <th scope="col">Ngày tạo</th>
                         <th scope="col">Chủ đề</th>
+                        <th scope="col">Trạng thái</th>
                         <th scope="col">Sửa/Xóa</th>
                     </tr>
                 </thead>
@@ -99,14 +101,22 @@ export default function SearchPost(props){
                                 stt++;
                                 limit5++;
                                 if(data.status === '0'){
-                                    sts = 'status-waiting';
+                                    // sts = 'status-waiting';
+                                    sts = 'Đang chờ duyệt';
+                                    colortxt = 'yellow';
                                 }else if(data.status === '1'){
-                                    sts = 'status-success';
-                                }else sts = 'status-fail';
+                                    // sts = 'status-success';
+                                    sts = 'Đã duyệt';
+                                    colortxt = 'green';
+                                }else {
+                                    // sts = 'status-fail';
+                                    sts = 'Không được duyệt';
+                                    colortxt = 'red';
+                                }
 
                                 return (
                                     <React.Fragment key={data.id}>
-                                        <tr className={sts}>
+                                        <tr className=''>
                                             <td>{stt}</td>
                                             <td>{data.title}</td>
                                             <td><img src={data.image} alt=""/></td>
@@ -125,6 +135,7 @@ export default function SearchPost(props){
                                                     })
                                                 }
                                             </td>
+                                            <td style={{color: colortxt}}>{sts}</td>
                                             <td>
                                                 <div className="form-group">
                                                     <button type="submit" className="btn btn-link btn-sm" onClick={(e) => {handleClickEdit(e, data.id)}}><i className="fa fa-pencil-square-o text-primary size-btn-edit" aria-hidden="true"></i></button>

@@ -89,7 +89,7 @@ export default function SearchApprovedPost(){
                                         return null;
                                     })
                                 }
-                                <div className="cp-category-title"><b>Có {sumPost.length} kết quả cho từ khóa "{title.replace('+', ' ')}"</b></div>
+                                <div className="cp-category-title"><b>{sumPost.length ? `Có ${sumPost.length} kết quả cho từ khóa "${title.replace('+', ' ')}"` : 'Đang tìm kiếm...'}</b></div>
                                 <table className="table size-text-table">
                                     <thead className="bg-primary text-white">
                                         <tr>

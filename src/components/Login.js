@@ -34,7 +34,7 @@ export default function Login(){
                     if(response.data.result.permission === 'Kiểm duyệt'){
                         localStorage.setItem("admin", JSON.stringify(res.data));
                         console.log(res.data);
-                        window.location='/admin';
+                        window.location='/admin/my-dashboard';
                     }else{
                         localStorage.setItem("system_admin", JSON.stringify(res.data));
                         console.log(res.data);

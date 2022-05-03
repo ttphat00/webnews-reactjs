@@ -63,7 +63,7 @@ export default function SearchUser(){
                                             return null;
                                         })
                                     }
-                                    <div className="cp-category-title"><b>Có {sumUser.length} kết quả cho từ khóa "{title.replace('+', ' ')}"</b></div>
+                                    <div className="cp-category-title"><b>{sumUser.length ? `Có ${sumUser.length} kết quả cho từ khóa "${title.replace('+', ' ')}"` : 'Đang tìm kiếm...'}</b></div>
                                     <table className="table">
                                         <thead className="bg-success text-white">
                                             <tr>

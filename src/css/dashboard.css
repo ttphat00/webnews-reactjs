@@ -26,12 +26,14 @@
 }
 .admin-main .quantity-user{
     text-align: center;
-    height: 80px;
-    font-size: 20px;
+    height: 70px;
+    font-size: 17px;
     margin-top: 30px;
     padding-top: 10px;
     margin-left: 100px;
-    width: 200px;
+    width: 180px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
 }
 .admin-main .all-user{
     position: absolute;
@@ -64,6 +66,8 @@
     padding-top: 10px;
     margin-right: 50px;
     width: 130px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
 }
 .admin-main .all-cate{
     position: absolute;
@@ -79,10 +83,12 @@
     padding-top: 10px;
     margin-right: 50px;
     width: 130px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 10px;
 }
 
 .admin-main .container .my-table-cate{
-    margin-top: 140px;
+    margin-top: 25px;
 }
 .admin-main .container .my-card-header{
     text-align: center;
@@ -137,13 +143,13 @@ table a:hover{
 }
 
 .status-waiting{
-    background-color: rgb(252, 252, 143);
+    background-color: #ffc107;
 }
 .status-success{
-    background-color: #67b878;
+    background-color: #28a745;
 }
 .status-fail{
-    background-color: #e76e7a;
+    background-color: #dc3545;
 }
 .search-form{
     position: relative;

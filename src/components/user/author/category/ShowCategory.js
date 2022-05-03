@@ -81,8 +81,8 @@ export default function ShowCategory(){
                                                         <React.Fragment key={data.id}>
                                                             <tr>
                                                                 <td>{stt}</td>
-                                                                <td><div className={sts}>{data.title}</div></td>
-                                                                <td>
+                                                                <td style={{color: 'white'}}><div className={sts}>{data.title}</div></td>
+                                                                <td style={{color: 'white'}}>
                                                                     {
                                                                         subcategory.map((item) => {
                                                                             if(item.id_category === data.id && user.result.id === item.id_user){

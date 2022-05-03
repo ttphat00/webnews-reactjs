@@ -7,44 +7,45 @@ import ApprovingPost from './post/ApprovingPost';
 import Approved from './category/Approved';
 import ApprovedPost from './post/ApprovedPost';
 import SearchApprovedPost from './post/SearchApprovedPost';
-import { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
+import AdminInfo from "./AdminInfo";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import axios from "axios";
 
 export default function AdminDashboard(){
     var match = useRouteMatch();
-    const [category, setCategory] = useState([]);
-    const [subcategory, setSubcategory] = useState([]);
-    const [post, setPost] = useState([]);
-    const approving_cate = [];
-    const approved_cate = [];
-    const approving_post = [];
-    const approved_post = [];
+    // const [category, setCategory] = useState([]);
+    // const [subcategory, setSubcategory] = useState([]);
+    // const [post, setPost] = useState([]);
+    // const approving_cate = [];
+    // const approved_cate = [];
+    // const approving_post = [];
+    // const approved_post = [];
 
-    useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/category')
-        .then(res => {
-            setCategory(res.data);
-        })
-        .catch(error => console.log(error));
+    // useEffect(() => {
+    //     axios.get('https://webnews-backend.herokuapp.com/api/category')
+    //     .then(res => {
+    //         setCategory(res.data);
+    //     })
+    //     .catch(error => console.log(error));
 
-        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
-        .then(res => {
-            setSubcategory(res.data);
-        })
-        .catch(error => console.log(error))
+    //     axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+    //     .then(res => {
+    //         setSubcategory(res.data);
+    //     })
+    //     .catch(error => console.log(error))
 
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
-        .then(res => {
-            setPost(res.data);
-        })
-        .catch(error => console.log(error))
-    }, [])
+    //     axios.get('https://webnews-backend.herokuapp.com/api/post')
+    //     .then(res => {
+    //         setPost(res.data);
+    //     })
+    //     .catch(error => console.log(error))
+    // }, [])
 
     return (
         <div className="admin-main">
             <div className="col-left bg-dark text-white">
-                <div className="card-header bg-dark m-auto"><Link className="nav-link" to="/admin">DASHBOARD</Link></div>
+            <div className="card-header bg-dark m-auto" style={{paddingLeft: '3rem'}}>DASHBOARD</div>
                 <div className="card-body">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active mr-3">
@@ -63,7 +64,7 @@ export default function AdminDashboard(){
                 </div>
             </div>
 
-            {
+            {/* {
                 category.map((data) => {
                     if(data.status === '1'){
                         approved_cate.push(data);
@@ -118,11 +119,12 @@ export default function AdminDashboard(){
                     <div>Bài viết đã duyệt</div>
                     <div>{approved_post.length}</div>
                 </div>
-            </div>
+            </div> */}
         
             
             
             <Switch>
+                <Route path={`${match.url}/my-dashboard`} component={AdminInfo} />
                 <Route path={`${match.url}/approving-category/:id`} component={Approving} />
                 <Route path={`${match.url}/approved-category/:id`} component={Approved} />
                 <Route path={`${match.url}/approving-post/:id`} component={ApprovingPost} />

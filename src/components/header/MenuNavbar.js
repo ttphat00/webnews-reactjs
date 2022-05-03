@@ -33,6 +33,10 @@ function MenuNavbar() {
             .catch(error => console.log(error));
         })
         .catch(error => console.log(error));
+
+        return () => {
+            window.removeEventListener('scroll',navbarFixed);
+        }
     }, []);
 
     return (
