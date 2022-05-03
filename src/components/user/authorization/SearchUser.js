@@ -20,6 +20,21 @@ export default function SearchUser(){
         setKeyWord(str.replace(' ', '+'));
     }
 
+    function handleClickDelete(e, idUser){
+        var isDelete = window.confirm('Đồng ý xóa người dùng này?');
+        if(isDelete){
+            axios.delete(`https://webnews-backend.herokuapp.com/api/users/${idUser}`)
+            .then(res => {
+                console.log(res.data);
+                axios.get('https://webnews-backend.herokuapp.com/api/users')
+                .then(res => {
+                    setUsers(res.data);
+                })
+                .catch(error => console.log(error));
+            })
+        }
+    }
+
     useEffect(() => {
         axios.get('https://webnews-backend.herokuapp.com/api/users')
         .then(res => {
@@ -90,6 +105,7 @@ export default function SearchUser(){
                                                                     <td>
                                                                         <div className="form-group">
                                                                             <Link to={`/edit-permission/1/${data.id}`}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link>
+                                                                            <button type="submit" className="btn btn-link btn-sm" onClick={(e) => {handleClickDelete(e, data.id)}}><i className="fa fa-trash-o text-danger size-btn-edit" aria-hidden="true"></i></button>
                                                                         </div>
                                                                     </td>
                                                                 </tr>

@@ -47,7 +47,7 @@ export default function ShowPost(props){
     },[myToken.token]);
 
     function handleClickDelete(e, idPost){
-        var isDelete = window.confirm('Đồng ý xóa chủ đề này?');
+        var isDelete = window.confirm('Đồng ý xóa bài viết này?');
         if(isDelete){
             axios.delete(`https://webnews-backend.herokuapp.com/api/post/${idPost}`)
             .then(res => {

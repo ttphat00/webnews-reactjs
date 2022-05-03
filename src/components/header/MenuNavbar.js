@@ -44,7 +44,7 @@ function MenuNavbar() {
             <nav className="menu-navbar">
                 <div className="container">
                     <ul>
-                        <li className="home"><Link to="/">Trang chủ</Link></li>
+                        <li className="home"><Link to="/"><i style={{fontSize: '18px'}} className="fa fa-home" aria-hidden="true"></i></Link></li>
                         {
                             category.map((data) => {
                                 if(data.status === '1'){
