@@ -104,7 +104,7 @@ export default function ShowPost(props){
                                 if(data.status === '0'){
                                     // sts = 'status-waiting';
                                     sts = 'Đang chờ duyệt';
-                                    colortxt = 'yellow';
+                                    colortxt = 'blue';
                                 }else if(data.status === '1'){
                                     // sts = 'status-success';
                                     sts = 'Đã duyệt';
@@ -138,10 +138,14 @@ export default function ShowPost(props){
                                             </td>
                                             <td style={{color: colortxt}}>{sts}</td>
                                             <td>
-                                                <div className="form-group">
-                                                    <button type="submit" className="btn btn-link btn-sm" onClick={(e) => {handleClickEdit(e, data.id)}}><i className="fa fa-pencil-square-o text-primary size-btn-edit" aria-hidden="true"></i></button>
-                                                    <button type="submit" className="btn btn-link btn-sm" onClick={(e) => {handleClickDelete(e, data.id)}}><i className="fa fa-trash-o text-danger size-btn-edit" aria-hidden="true"></i></button>
-                                                </div>
+                                            {
+                                                data.status !== '1' ?
+                                                    <div className="form-group">
+                                                        <button type="submit" className="btn btn-link btn-sm" onClick={(e) => {handleClickEdit(e, data.id)}}><i className="fa fa-pencil-square-o text-primary size-btn-edit" aria-hidden="true"></i></button>
+                                                        <button type="submit" className="btn btn-link btn-sm" onClick={(e) => {handleClickDelete(e, data.id)}}><i className="fa fa-trash-o text-danger size-btn-edit" aria-hidden="true"></i></button>
+                                                    </div>
+                                                : null
+                                            }
                                             </td>
                                         </tr>
                                     </React.Fragment>
