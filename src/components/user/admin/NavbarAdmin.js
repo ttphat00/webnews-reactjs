@@ -10,7 +10,7 @@ export default function NavbarAdmin(){
 
     useEffect(() => {
         
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
             setIsShow(true);

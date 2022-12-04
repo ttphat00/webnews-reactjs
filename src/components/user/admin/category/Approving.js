@@ -16,13 +16,13 @@ export default function Approving(){
     stt = (id - 1) * 5;
 
     useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/category')
+        axios.get(`${process.env.REACT_APP_API_URL}category`)
         .then(res => {
             setCategory(res.data);
         })
         .catch(error => console.log(error));
 
-        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+        axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
         .then(res => {
             setSubcategory(res.data);
         })
@@ -39,11 +39,11 @@ export default function Approving(){
                         id_user: data.id_user,
                         status: '-1'
                     };
-                    axios.put(`https://webnews-backend.herokuapp.com/api/category/${data.id}`, cate)
+                    axios.put(`${process.env.REACT_APP_API_URL}category/${data.id}`, cate)
                     .then(res => {
                         console.log(res.data);
                         //window.location.reload();
-                        axios.get('https://webnews-backend.herokuapp.com/api/category')
+                        axios.get(`${process.env.REACT_APP_API_URL}category`)
                         .then(res => {
                             setCategory(res.data);
                         })
@@ -63,11 +63,11 @@ export default function Approving(){
                         id_user: data.id_user,
                         status: '-1'
                     };
-                    axios.put(`https://webnews-backend.herokuapp.com/api/subcategory/${data.id}`, subcate)
+                    axios.put(`${process.env.REACT_APP_API_URL}subcategory/${data.id}`, subcate)
                     .then(res => {
                         console.log(res.data);
                         //window.location.reload();
-                        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+                        axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
                         .then(res => {
                             setSubcategory(res.data);
                         })
@@ -89,11 +89,11 @@ export default function Approving(){
                         id_user: data.id_user,
                         status: '1'
                     };
-                    axios.put(`https://webnews-backend.herokuapp.com/api/category/${data.id}`, cate)
+                    axios.put(`${process.env.REACT_APP_API_URL}category/${data.id}`, cate)
                     .then(res => {
                         console.log(res.data);
                         //window.location.reload();
-                        axios.get('https://webnews-backend.herokuapp.com/api/category')
+                        axios.get(`${process.env.REACT_APP_API_URL}category`)
                         .then(res => {
                             setCategory(res.data);
                         })
@@ -113,11 +113,11 @@ export default function Approving(){
                         id_user: data.id_user,
                         status: '1'
                     };
-                    axios.put(`https://webnews-backend.herokuapp.com/api/subcategory/${data.id}`, subcate)
+                    axios.put(`${process.env.REACT_APP_API_URL}subcategory/${data.id}`, subcate)
                     .then(res => {
                         console.log(res.data);
                         //window.location.reload();
-                        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+                        axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
                         .then(res => {
                             setSubcategory(res.data);
                         })

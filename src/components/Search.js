@@ -15,7 +15,7 @@ function Search() {
     let limit5 = 0;
 
     useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
+        axios.get(`${process.env.REACT_APP_API_URL}post`)
         .then(res => {
             setPost(res.data);
         })

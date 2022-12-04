@@ -7,7 +7,7 @@ export default function PostList(props){
     const [post, setPost] = useState([]);
 
     useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
+        axios.get(`${process.env.REACT_APP_API_URL}post`)
         .then(res => {
             setPost(res.data);
         })

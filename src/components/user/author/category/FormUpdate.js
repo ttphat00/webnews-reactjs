@@ -12,10 +12,10 @@ export default function FormUpdate(props){
     useEffect(() => {
         props.valueShow(true);
     
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
-            axios.get(`https://webnews-backend.herokuapp.com/api/category/${props.valueId}`)
+            axios.get(`${process.env.REACT_APP_API_URL}category/${props.valueId}`)
             .then(res => {
                 setCate(res.data);
                 setTitle(res.data.title);
@@ -39,7 +39,7 @@ export default function FormUpdate(props){
             status: '0'
         };
 
-        axios.put(`https://webnews-backend.herokuapp.com/api/category/${props.valueId}`, category)
+        axios.put(`${process.env.REACT_APP_API_URL}category/${props.valueId}`, category)
         .then(res => {
             console.log(res.data);
         })

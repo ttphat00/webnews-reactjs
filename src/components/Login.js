@@ -22,9 +22,9 @@ export default function Login(){
             password: pass
         };
 
-        axios.post('https://webnews-backend.herokuapp.com/api/login', user)
+        axios.post(`${process.env.REACT_APP_API_URL}login`, user)
         .then(res => {
-            axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${res.data.token}`)
+            axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${res.data.token}`)
             .then(response => {
                 if(response.data.result.permission === 'Tác giả'){
                     localStorage.setItem("token", JSON.stringify(res.data));

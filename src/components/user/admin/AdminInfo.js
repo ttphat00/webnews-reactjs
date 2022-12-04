@@ -13,25 +13,25 @@ export default function AdminInfo(){
     const approved_post = [];
 
     useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/category')
+        axios.get(`${process.env.REACT_APP_API_URL}category`)
         .then(res => {
             setCategory(res.data);
         })
         .catch(error => console.log(error));
 
-        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+        axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
         .then(res => {
             setSubcategory(res.data);
         })
         .catch(error => console.log(error))
 
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
+        axios.get(`${process.env.REACT_APP_API_URL}post`)
         .then(res => {
             setPost(res.data);
         })
         .catch(error => console.log(error))
 
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
         })

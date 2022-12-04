@@ -19,14 +19,14 @@ function Category() {
     let limit5 = 0;
 
     useEffect(() => {
-        axios.get(`https://webnews-backend.herokuapp.com/api/category/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}category/${id}`)
         .then(res => {
             document.title ='Tin tức '+ res.data.title;
             setCategory(res.data);
-            axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+            axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
             .then(res => {
                 setSubcategory(res.data);
-                axios.get('https://webnews-backend.herokuapp.com/api/post')
+                axios.get(`${process.env.REACT_APP_API_URL}post`)
                 .then(res => {
                     setPost(res.data);
                 })

@@ -23,10 +23,10 @@ function MenuNavbar() {
     useEffect(() => {
         window.addEventListener('scroll',navbarFixed);
 
-        axios.get('https://webnews-backend.herokuapp.com/api/category')
+        axios.get(`${process.env.REACT_APP_API_URL}category`)
         .then(res => {
             setCategory(res.data);
-            axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+            axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
             .then(res => {
                 setSubcategory(res.data);
             })

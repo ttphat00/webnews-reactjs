@@ -15,7 +15,7 @@ export default function Authorization(){
     useEffect(() => {
         document.title = 'System Admin';
 
-        axios.get('https://webnews-backend.herokuapp.com/api/users')
+        axios.get(`${process.env.REACT_APP_API_URL}users`)
         .then(res => {
             setUser(res.data);
         })

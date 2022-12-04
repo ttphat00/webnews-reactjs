@@ -14,7 +14,7 @@ function Single() {
     let { id } = useParams();
 
     useEffect(() => {
-        axios.get(`https://webnews-backend.herokuapp.com/api/post/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}post/${id}`)
         .then(res => {
             setPost(res.data);
             document.title = res.data.title;

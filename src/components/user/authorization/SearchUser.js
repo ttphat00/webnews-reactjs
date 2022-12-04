@@ -23,10 +23,10 @@ export default function SearchUser(){
     function handleClickDelete(e, idUser){
         var isDelete = window.confirm('Đồng ý xóa người dùng này?');
         if(isDelete){
-            axios.delete(`https://webnews-backend.herokuapp.com/api/users/${idUser}`)
+            axios.delete(`${process.env.REACT_APP_API_URL}users/${idUser}`)
             .then(res => {
                 console.log(res.data);
-                axios.get('https://webnews-backend.herokuapp.com/api/users')
+                axios.get(`${process.env.REACT_APP_API_URL}users`)
                 .then(res => {
                     setUsers(res.data);
                 })
@@ -36,7 +36,7 @@ export default function SearchUser(){
     }
 
     useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/users')
+        axios.get(`${process.env.REACT_APP_API_URL}users`)
         .then(res => {
             setUsers(res.data);
         })

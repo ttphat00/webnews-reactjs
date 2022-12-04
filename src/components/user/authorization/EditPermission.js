@@ -10,7 +10,7 @@ export default function EditPermission(){
     let { idpage, id } = useParams();
 
     useEffect(() => {
-        axios.get(`https://webnews-backend.herokuapp.com/api/users/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}users/${id}`)
         .then(res => {
             setUser(res.data);
             setPerm(res.data.permission);
@@ -34,7 +34,7 @@ export default function EditPermission(){
             email: user.email,
             permission: perm
         };
-        axios.put(`https://webnews-backend.herokuapp.com/api/users/${id}`, userInfor)
+        axios.put(`${process.env.REACT_APP_API_URL}users/${id}`, userInfor)
         .then(res => {
             console.log(res.data);
             alert('Cập nhật thành công');

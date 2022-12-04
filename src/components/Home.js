@@ -15,7 +15,7 @@ function Home() {
     useEffect(() => {
         document.title = 'Tin tức tổng hợp 24h';
 
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
+        axios.get(`${process.env.REACT_APP_API_URL}post`)
         .then(res => {
             setPost(res.data);
         })

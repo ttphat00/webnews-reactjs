@@ -10,7 +10,7 @@ export default function CreateCategory(){
 
     useEffect(() => {
         
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
         })
@@ -31,7 +31,7 @@ export default function CreateCategory(){
             status: '0'
         };
 
-        axios.post('https://webnews-backend.herokuapp.com/api/category', category)
+        axios.post(`${process.env.REACT_APP_API_URL}category`, category)
         .then(res => {
             console.log(res.data);
             alert('Thêm chủ đề thành công');

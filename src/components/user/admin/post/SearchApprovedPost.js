@@ -23,13 +23,13 @@ export default function SearchApprovedPost(){
     }
 
     useEffect(() => {
-        axios.get('https://webnews-backend.herokuapp.com/api/post')
+        axios.get(`${process.env.REACT_APP_API_URL}post`)
         .then(res => {
             setPost(res.data);
         })
         .catch(error => console.log(error));
 
-        axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+        axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
         .then(res => {
             setSubcategory(res.data);
         })
@@ -51,11 +51,11 @@ export default function SearchApprovedPost(){
                         id_user: data.id_user,
                         status: '-1'
                     };
-                    axios.put(`https://webnews-backend.herokuapp.com/api/post/${data.id}`, pst)
+                    axios.put(`${process.env.REACT_APP_API_URL}post/${data.id}`, pst)
                     .then(res => {
                         console.log(res.data);
                         //window.location.reload();
-                        axios.get('https://webnews-backend.herokuapp.com/api/post')
+                        axios.get(`${process.env.REACT_APP_API_URL}post`)
                         .then(res => {
                             setPost(res.data);
                         })

@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\nienluannganh\\web-pet-shop-backend"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\petshop"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\react-app"
+		},
+		{
+			"path": "..\\..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\..\\xampp\\htdocs\\webnews-backend"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "hihihi"
+	}
+}

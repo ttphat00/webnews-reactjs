@@ -10,12 +10,12 @@ function PostDetail() {
     let { id } = useParams();
 
     useEffect(() => {
-        axios.get(`https://webnews-backend.herokuapp.com/api/post/${id}`)
+        axios.get(`${process.env.REACT_APP_API_URL}post/${id}`)
         .then(res => {
             setPost(res.data);
             document.title = res.data.title;
             document.querySelector('.sp-post-content').innerHTML = res.data.content;
-            axios.get(`https://webnews-backend.herokuapp.com/api/users/${res.data.id_user}`)
+            axios.get(`${process.env.REACT_APP_API_URL}users/${res.data.id_user}`)
             .then(res => {
                 setUser(res.data);
             })

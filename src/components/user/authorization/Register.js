@@ -28,7 +28,7 @@ export default function Register(){
             permission: 'Tác giả'
         };
 
-        axios.post('https://webnews-backend.herokuapp.com/api/register', user)
+        axios.post(`${process.env.REACT_APP_API_URL}register`, user)
         .then(res => {
             console.log(res.data);
             alert('Đăng ký thành công');

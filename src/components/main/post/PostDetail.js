@@ -10,13 +10,13 @@ export default function PostDetail(props){
     useEffect(() => {
         document.querySelector('.sp-post-content').innerHTML = props.idPost.content || '...';
 
-        axios.get(`https://webnews-backend.herokuapp.com/api/users/${props.idPost.id_user}`)
+        axios.get(`${process.env.REACT_APP_API_URL}users/${props.idPost.id_user}`)
         .then(res => {
             setUser(res.data);
-            axios.get(`https://webnews-backend.herokuapp.com/api/subcategory/${props.idPost.id_subcategory}`)
+            axios.get(`${process.env.REACT_APP_API_URL}subcategory/${props.idPost.id_subcategory}`)
             .then(res => {
                 setSubcategory(res.data);
-                axios.get('https://webnews-backend.herokuapp.com/api/category')
+                axios.get(`${process.env.REACT_APP_API_URL}category`)
                 .then(res => {
                     setCategory(res.data);
                 })

@@ -19,10 +19,10 @@ export default function FormUpdate(props){
     useEffect(() => {
         props.valueShow(true);
 
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
-            axios.get(`https://webnews-backend.herokuapp.com/api/post/${props.valueId}`)
+            axios.get(`${process.env.REACT_APP_API_URL}post/${props.valueId}`)
             .then(res => {
                 setPostSelected(res.data);
                 setTitle(res.data.title);
@@ -30,7 +30,7 @@ export default function FormUpdate(props){
                 setDescription(res.data.description);
                 setContent(res.data.content);
                 setKey(res.data.id_subcategory);
-                axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+                axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
                 .then(res => {
                     setSubcategory(res.data);
                     // setKey(document.querySelector('select').value);
@@ -86,7 +86,7 @@ export default function FormUpdate(props){
             status: '0'
         };
 
-        axios.put(`https://webnews-backend.herokuapp.com/api/post/${props.valueId}`, post)
+        axios.put(`${process.env.REACT_APP_API_URL}post/${props.valueId}`, post)
         .then(res => {
             console.log(res.data);
         })

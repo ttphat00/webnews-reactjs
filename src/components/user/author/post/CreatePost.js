@@ -16,10 +16,10 @@ export default function CreateCategory(){
     let myToken = JSON.parse(localStorage.getItem('token'));
 
     useEffect(() => {
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
-            axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+            axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
             .then(res => {
                 setSubcategory(res.data);
                 setKey(document.querySelector('select').value);
@@ -73,7 +73,7 @@ export default function CreateCategory(){
             status: '0'
         };
 
-        axios.post('https://webnews-backend.herokuapp.com/api/post', post)
+        axios.post(`${process.env.REACT_APP_API_URL}post`, post)
         .then(res => {
             console.log(res.data);
             alert('Thêm bài viết thành công');

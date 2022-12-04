@@ -11,10 +11,10 @@ export default function FormEdit(props){
 
     useEffect(() => {
         
-        axios.get(`https://webnews-backend.herokuapp.com/api/user-info?token=${myToken.token}`)
+        axios.get(`${process.env.REACT_APP_API_URL}user-info?token=${myToken.token}`)
         .then(res => {
             setUser(res.data);
-            axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+            axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
             .then(res => {
                 setSubcategory(res.data);
                 setKey(document.querySelector('select').value);
@@ -41,10 +41,10 @@ export default function FormEdit(props){
 
         var isDelete = window.confirm('Đồng ý xóa chủ đề con này?');
         if(isDelete){
-            axios.delete(`https://webnews-backend.herokuapp.com/api/subcategory/${key}`)
+            axios.delete(`${process.env.REACT_APP_API_URL}subcategory/${key}`)
             .then(res => {
                 console.log(res.data);
-                axios.get('https://webnews-backend.herokuapp.com/api/subcategory')
+                axios.get(`${process.env.REACT_APP_API_URL}subcategory`)
                 .then(res => {
                     setSubcategory(res.data);
                     setKey(document.querySelector('select').value);
